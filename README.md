@@ -5,6 +5,7 @@ Purpose:
 Teach basic logic concepts to middle school students.
 
 The game flows through a series of progressively more difficult levels
+
 Each level includes:
   One or multiple conditions in sentance format
   A sentance that sets at least one condition to true or false
