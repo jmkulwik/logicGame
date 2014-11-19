@@ -2,20 +2,14 @@ logicGame
 =========
 
 Purpose:  
-Teach basic logic concepts to middle school students.
+Help middle school students make the jump from block-based pre-made programming to text-based programming. Secondary goal: reinforce basic logic concepts
 
 The game flows through a series of progressively more difficult levels   
 Each level includes:   
-  One or multiple conditions in sentance format   
-  A sentance that sets at least one condition to true or false   
-  Yes/No question   
-  Space to answer Yes/No   
+  A basic logic true/false grid
+  A set of conditions (written in pseudocode) that allow the player to correctly fill in the grid
+  Each condition will have a translation into "normal english" when the mouse hovers over it
   
 If a student correctly answers, they may move on to the next level, 
-Otherwise, the level will repeat itself with an added explanation
+Otherwise, the level will repeat itself with an option for hints
   
-Example of game flow:
-  John only brings an umbrella if it is raining and he is wearing a suit    
-  John is not wearing a suit    
-  Will John bring an umbrella?    
-  Answer [Y/N]:     
