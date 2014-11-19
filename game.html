@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+.background_one {
+width:50px;
+height:50px;
+border: 1px solid black;
+}
+
+.background_true {
+width:50px;
+height:50px;
+background: url(True.png);
+background-size: 52px 52px;
+background-repeat: no-repeat;
+border: 1px solid black;
+}
+
+.background_false {
+width:50px;
+height:50px;
+background: url(False.png);
+background-size: 52px 52px;
+background-repeat: no-repeat;
+border: 1px solid black;
+}
+
+table {
+	border: none;
+	border-collapse: collapse;
+}
+
+tr, td {
+	border: none;
+	border-collapse: collapse;
+}
+
+
+.vertical_condition {
+border-top-style:none;
+width:50px;
+height:200px;
+transform: rotate(-90deg);
+}
+
+.horizontal_condition {
+border-left-style:none;
+width:200px;
+height:50px;
+}
+
+button {
+align:center;
+}
+
+</style>
+</head>
+
+<body>
+<table align="center" id="tableID" border="1" style="cursor: pointer;">
+    <tr>
+		<td class="empty" frame="void"></td>
+		<th class="vertical_condition">test</th>
+		<th class="vertical_condition">test</th>
+		<th class="vertical_condition">test</th>
+	</tr>
+	<tr>
+		<th class="horizontal_condition">test1</th>
+        <td id="00" class="background_one" onClick="changeArrow(this)"></td>
+        <td id="01"class="background_one" onClick="changeArrow(this)"></td>
+        <td id="02" class="background_one" onClick="changeArrow(this)"></td>
+    </tr>
+    <tr>
+		<th class="horizontal_condition">test1</th>
+        <td id="10" class="background_one" onClick="changeArrow(this)"></td>
+        <td id="11" class="background_one" onClick="changeArrow(this)"></td>
+        <td id="12" class="background_one" onClick="changeArrow(this)"></td>
+    </tr>
+    <tr>
+		<th class="horizontal_condition">test1</th>
+		<td id="20" class="background_one" onClick="changeArrow(this)"></td>
+        <td id="21" class="background_one" onClick="changeArrow(this)"></td>
+        <td id="22" class="background_one" onClick="changeArrow(this)"></td>
+    </tr>
+</table>
+<p align="center">
+<button onClick="checkAnswer()">Check</button>
+</p>
+<script>
+function changeArrow(element){
+	var arrow = element;
+    if(arrow.className == 'background_one'){
+		arrow.className = 'background_true';
+    } else if (arrow.className == 'background_true'){
+		arrow.className = 'background_false';
+    } else {
+		arrow.className = 'background_one';
+	}
+}
+
+function checkAnswer() {
+	// intentionally difficult to read so it is hard to cheat.
+	// 100 010 001
+	var answer = 273;
+	var size = 3;
+	var chkAns = 0;
+	var id;
+	for (var i = 0; i < size; ++i) {
+		for (var j = 0; j < size; ++j) {
+			id = i.toString().concat(j.toString());
+			chkAns = chkAns << 1;
+			if (document.getElementById(id).className == 'background_true'){
+				chkAns = chkAns + 1;
+			}
+		}
+	}
+	if (chkAns == answer) {
+		alert("great job!");
+	} else {
+		alert("you loose :(");
+	}
+	
+}
+</script>
+</body>
+
+</html>
