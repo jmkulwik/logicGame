@@ -3,6 +3,42 @@
 
 <head>
 <style>
+div.container {
+    width: 100%;
+    margin: 0px;
+    border: 1px solid gray;
+    line-height: 150%;
+}
+
+div.header, div.footer {
+    padding: 0.5em;
+    color: white;
+    background-color: gray;
+    clear: left;
+}
+
+h1.header {
+    padding: 0;
+    margin: 0;
+}
+
+div.right {
+    float: right;
+    width: 300px;
+    margin: 0;
+    padding: 1em;
+}
+
+div.content {
+    margin-right: 330px;
+    border-right: 1px solid gray;
+    padding: 1em;
+}
+
+p { 
+	font-family: "Courier New", Courier, monospace
+}
+
 .background_one {
 width:50px;
 height:50px;
@@ -59,27 +95,36 @@ align:center;
 </head>
 
 <body>
-<table align="center" id="tableID" border="1" style="cursor: pointer;">
+<div class="container">
+  <div class="header"><h1 class="header">Logic Game</h1></div>
+  <div class="right">
+	<p title="Brian is older than Sam">1. Brian.age > Sam.age</p>
+	<p title="Sam is 18">2. Sam.age == 18</p>
+	<p title="Brian is younger than Joshua">3. Brian.age < Joshua.age</p>
+  </div>
+  <div class="content">
+    <h2><center>Level 1</center></h2>
+	<table align="center" id="tableID" border="1" style="cursor: pointer;">
     <tr>
 		<td class="empty" frame="void"></td>
-		<th class="vertical_condition">test</th>
-		<th class="vertical_condition">test</th>
-		<th class="vertical_condition">test</th>
+		<th class="vertical_condition">Sam</th>
+		<th class="vertical_condition">Brian</th>
+		<th class="vertical_condition">Joshua</th>
 	</tr>
 	<tr>
-		<th class="horizontal_condition">test1</th>
+		<th class="horizontal_condition">18</th>
         <td id="00" class="background_one" onClick="changeArrow(this)"></td>
         <td id="01"class="background_one" onClick="changeArrow(this)"></td>
         <td id="02" class="background_one" onClick="changeArrow(this)"></td>
     </tr>
     <tr>
-		<th class="horizontal_condition">test1</th>
+		<th class="horizontal_condition">20</th>
         <td id="10" class="background_one" onClick="changeArrow(this)"></td>
         <td id="11" class="background_one" onClick="changeArrow(this)"></td>
         <td id="12" class="background_one" onClick="changeArrow(this)"></td>
     </tr>
     <tr>
-		<th class="horizontal_condition">test1</th>
+		<th class="horizontal_condition">22</th>
 		<td id="20" class="background_one" onClick="changeArrow(this)"></td>
         <td id="21" class="background_one" onClick="changeArrow(this)"></td>
         <td id="22" class="background_one" onClick="changeArrow(this)"></td>
@@ -88,6 +133,12 @@ align:center;
 <p align="center">
 <button onClick="checkAnswer()">Check</button>
 </p>
+	
+  </div>
+  <div class="footer">Contact: Jessica Opaleski -- jopalesk@umich.edu</div>
+</div>
+
+
 <script>
 function changeArrow(element){
 	var arrow = element;
